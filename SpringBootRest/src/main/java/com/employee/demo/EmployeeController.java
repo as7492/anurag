@@ -28,26 +28,22 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/employee")
-	@ResponseBody
 	public Employee saveEmp(@RequestBody Employee employee) {
 		employeeJPA.save(employee);
 		return employee;
 	}
 	
 	@GetMapping("/employee/{empid}")
-	@ResponseBody
 	public Optional<Employee> getEmp(@PathVariable("empid") int empid) {
 		return employeeJPA.findById(empid);
 	}
 	
 	@GetMapping("/employees")
-	@ResponseBody
 	public List<Employee> getAllEmp() {
 		return employeeJPA.findAll();
 	}
 	
 	@DeleteMapping("/employee/{empid}")
-	@ResponseBody
 	public boolean delEmp(@PathVariable("empid") int empid) {
 		employeeJPA.deleteById(empid);
 		return true;
