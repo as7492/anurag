@@ -141,6 +141,23 @@ public class Tree {
 		}
 	}
 	
+	public static Node findLCA(Node node, int data1, int data2) {
+		if(node == null) {
+			return null;
+		}
+		if(node.data == data1 || node.data == data2) {
+			return node;
+		}
+		Node leftNode = findLCA(node.left, data1, data2);
+		Node rightNode = findLCA(node.right, data1, data2);
+		
+		if(leftNode != null && rightNode != null) {
+			return node;
+		}
+		
+		return leftNode != null ? leftNode : rightNode;
+	}
+	
 	
 	
 	public static void main(String args[]) {
@@ -175,6 +192,10 @@ public class Tree {
 		System.out.println("\n----------------------------");
 		System.out.println("Spiral Order : ");
 		spiralOrder(node);
+		
+		System.out.println("\n----------------------------");
+		System.out.println("LCA of (5,8) : ");
+		System.out.println(findLCA(node, 5, 8).data);
 	}
 
 }
