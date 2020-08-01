@@ -1,13 +1,13 @@
 package dp.knapsack.unbounded;
 
-public class Knapsack {
+public class UnboundedKnapsack {
 	
 	public static int getMapCapacityRec(int[] weight, int[] values, int n, int w) {
 		if(n==0 || w ==0) {
 			return 0;
 		}
 		if (weight[n - 1] <= w) {
-			return Math.max(values[n - 1] + getMapCapacityRec(weight, values, n - 1, w - weight[n - 1]),
+			return Math.max(values[n - 1] + getMapCapacityRec(weight, values, n, w - weight[n - 1]),
 					getMapCapacityRec(weight, values, n - 1, w));
 		} else {
 			return getMapCapacityRec(weight, values, n - 1, w);
@@ -25,7 +25,7 @@ public class Knapsack {
 		for(int i=1; i<n+1; i++) {
 			for(int j=1; j<w+1; j++) {
 				if(weight[i-1] <= j) {
-					sum[i][j] = Math.max(values[i-1] + sum[i-1][j-weight[i-1]], sum[i-1][j]);
+					sum[i][j] = Math.max(values[i-1] + sum[i][j-weight[i-1]], sum[i-1][j]);
 				}else {
 					sum[i][j] = sum[i-1][j];
 				}

@@ -1,4 +1,4 @@
-package dp.knapsack.bounded;
+package dp.knapsack.unbounded;
 
 public class RodCutting {
 	

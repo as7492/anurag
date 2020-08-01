@@ -1,10 +1,8 @@
 package dp.knapsack.bounded;
 
-public class CombinationSum {
+public class CountSubsetSum {
 	
-	//Also use this for Coin Change Problem : Maximum Number of ways
-	
-	public static int countCombinationSumRec(int[] arr, int n, int sum) {
+	public static int countSubsetSumRec(int[] arr, int n, int sum) {
 		if(sum == 0) {
 			return 1;
 		}
@@ -13,13 +11,13 @@ public class CombinationSum {
 		}
 		
 		if(arr[n-1] <= sum) {
-			return countCombinationSumRec(arr, n, sum-arr[n-1]) + countCombinationSumRec(arr, n-1, sum);
+			return countSubsetSumRec(arr, n-1, sum-arr[n-1]) + countSubsetSumRec(arr, n-1, sum);
 		}else {
-			return countCombinationSumRec(arr, n-1, sum);
+			return countSubsetSumRec(arr, n-1, sum);
 		}
 	}
 	
-	public static int countCombinationSum(int[] arr, int n, int sum) {
+	public static int countSubsetSum(int[] arr, int n, int sum) {
 		int[][] result = new int[n+1][sum+1];
 		
 		// when sum is 0 then we can have one subset in array with any length i.e. empty array as subset
@@ -36,7 +34,7 @@ public class CombinationSum {
 		for(int i=1; i<n+1; i++) {
 			for(int j=1; j<sum+1; j++) {
 				if(arr[i-1] <= j) {
-					result[i][j] = result[i][j-arr[i-1]] + result[i-1][j];
+					result[i][j] = result[i-1][j-arr[i-1]] + result[i-1][j];
 				}else {
 					result[i][j] = result[i-1][j];
 				}
@@ -48,14 +46,14 @@ public class CombinationSum {
 	
 
 	public static void main(String[] args) {
-		int arr[] = {1,2,3};
-		int sum = 5;
+		int arr[] = {2,3,5,6,8,10};
+		int sum = 10;
 		
 		
-		int count = countCombinationSum(arr, arr.length, sum);
+		int count = countSubsetSum(arr, arr.length, sum);
 		System.out.println(count);
 		
-		count = countCombinationSumRec(arr, arr.length, sum);
+		count = countSubsetSumRec(arr, arr.length, sum);
 		System.out.println(count);
 	}
 

@@ -1,4 +1,4 @@
-package dp.knapsack.unbounded;
+package dp.knapsack.bounded;
 
 public class EqualSumPartition {
 	
