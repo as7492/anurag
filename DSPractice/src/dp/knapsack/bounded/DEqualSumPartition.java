@@ -1,6 +1,6 @@
 package dp.knapsack.bounded;
 
-public class EqualSumPartition {
+public class DEqualSumPartition {
 	
 	public static boolean checkEqualPartition(int[] arr) {
 		int sum = 0;
@@ -11,7 +11,7 @@ public class EqualSumPartition {
 		if(sum%2!=0) {
 			return false;
 		}else {
-			return SubsetSum.hasSubsetSum(arr, arr.length, sum/2);
+			return BSubsetSum.hasSubsetSum(arr, arr.length, sum/2);
 		}
 	}
 

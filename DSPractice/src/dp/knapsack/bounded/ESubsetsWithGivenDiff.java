@@ -1,6 +1,6 @@
 package dp.knapsack.bounded;
 
-public class SubsetsWithGivenDiff {
+public class ESubsetsWithGivenDiff {
 	
 	public static void main(String[] args) {
 		int arr[] = { 4, 2, 5, 7, 8, 6 };
@@ -18,7 +18,7 @@ public class SubsetsWithGivenDiff {
 		int sumSubset1 = (sum+diff)/2;
 		
 
-		System.out.println(CountSubsetSum.countSubsetSum(arr, arr.length, sumSubset1));
+		System.out.println(CCountSubsetSum.countSubsetSum(arr, arr.length, sumSubset1));
 
 	}
 }

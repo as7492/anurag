@@ -1,6 +1,6 @@
 package dp.knapsack.bounded;
 
-public class CountSubsetSum {
+public class CCountSubsetSum {
 	
 	public static int countSubsetSumRec(int[] arr, int n, int sum) {
 		if(sum == 0) {

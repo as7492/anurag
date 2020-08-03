@@ -48,8 +48,8 @@ public class CombinationSum {
 	
 
 	public static void main(String[] args) {
-		int arr[] = {1,2,3};
-		int sum = 5;
+		int arr[] = {1,2};
+		int sum = 8;
 		
 		
 		int count = countCombinationSum(arr, arr.length, sum);

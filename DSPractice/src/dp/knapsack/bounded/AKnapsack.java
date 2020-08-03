@@ -1,6 +1,6 @@
 package dp.knapsack.bounded;
 
-public class Knapsack {
+public class AKnapsack {
 	
 	public static int getMapCapacityRec(int[] weight, int[] values, int n, int w) {
 		if(n==0 || w ==0) {
