@@ -2,6 +2,8 @@ package dp.knapsack.bounded;
 
 public class ESubsetsWithGivenDiff {
 	
+	// Count number of subsets with given given difference
+	
 	public static void main(String[] args) {
 		int arr[] = { 4, 2, 5, 7, 8, 6 };
 		int diff = 3;

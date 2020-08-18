@@ -2,6 +2,8 @@ package dp.knapsack.bounded;
 
 public class CCountSubsetSum {
 	
+	// Count number of subsets whose summation is given sum
+	
 	public static int countSubsetSumRec(int[] arr, int n, int sum) {
 		if(sum == 0) {
 			return 1;

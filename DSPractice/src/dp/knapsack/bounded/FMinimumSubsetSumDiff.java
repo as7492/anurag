@@ -1,7 +1,5 @@
 package dp.knapsack.bounded;
 
-import java.util.Arrays;
-
 public class FMinimumSubsetSumDiff {
 	
 	public static int minSubsetSumDiff(int[] arr, int n, int range) {
@@ -28,7 +26,6 @@ public class FMinimumSubsetSumDiff {
 			}
 		}
 		
-		System.out.println(Arrays.toString(result[n]));
 		int min = Integer.MAX_VALUE;
 		
 		for(int j=0; j<=range/2; j++) {
@@ -36,9 +33,7 @@ public class FMinimumSubsetSumDiff {
 				min = range-(2*j) < min ? range-(2*j) : min;
 			}
 		}
-
 		return min;
-		
 	}
 	
 	

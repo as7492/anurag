@@ -1,9 +1,7 @@
 package tree;
 
 public class RightBottomView {
-	
-	
-	
+
 	class Max_level { 		  
 	    int max_level; 
 	}

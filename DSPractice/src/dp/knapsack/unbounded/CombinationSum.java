@@ -22,7 +22,7 @@ public class CombinationSum {
 	public static int countCombinationSum(int[] arr, int n, int sum) {
 		int[][] result = new int[n+1][sum+1];
 		
-		// when sum is 0 then we can have one subset in array with any length i.e. empty array as subset
+		// when sum is 0 then we can have one subset in array with 0 length i.e. empty array as subset
 		// we will fill up first column with value 1
 		for(int i=0; i<n+1; i++) {
 			result[i][0]=1;

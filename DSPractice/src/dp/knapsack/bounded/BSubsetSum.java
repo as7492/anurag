@@ -2,6 +2,7 @@ package dp.knapsack.bounded;
 
 public class BSubsetSum {
 	
+	// Check array has subset with given sum or not
 	
 	public static boolean hasSubsetSumRec(int[] arr, int n, int sum) {
 		if(sum == 0) {
@@ -21,7 +22,7 @@ public class BSubsetSum {
 	public static boolean hasSubsetSum(int[] arr, int n, int sum) {
 		boolean[][] result = new boolean[n+1][sum+1];
 		
-		// when sum is 0 then we can have subset in array with any length i.e. empty array as subset
+		// when sum is 0 then we can have subset in array with 0 length i.e. empty array as subset
 		// we will fill up first column with value true
 		for(int i=0; i<n+1; i++) {
 			result[i][0]=true;

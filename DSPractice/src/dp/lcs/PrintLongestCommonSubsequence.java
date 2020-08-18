@@ -45,7 +45,7 @@ public class PrintLongestCommonSubsequence {
 	}
 	
 	public static void main(String args[]) {
-		String x = "anurag";
+		String x = "abcd";
 		String y = "auvhjsg";
 		
 		String revlcs = printlcs(x.toCharArray(), x.length(), y.toCharArray(), y.length());

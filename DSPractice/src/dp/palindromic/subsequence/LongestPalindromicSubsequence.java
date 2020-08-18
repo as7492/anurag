@@ -33,8 +33,8 @@ public class LongestPalindromicSubsequence {
 
 		
 		int lps = lcs(str.toCharArray(), str.length(), strRev.toString().toCharArray(), strRev.length());
-		int minDeletion = str.length()-lps;
-		System.out.println("Minimun Deletion : "+minDeletion);
+		
+		System.out.println(lps);
 		
 	}
 

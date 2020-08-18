@@ -33,9 +33,7 @@ public class MinDeletionForPalindromicSubsequence {
 
 		
 		int lps = lcs(str.toCharArray(), str.length(), strRev.toString().toCharArray(), strRev.length());
-		
-		System.out.println(lps);
-		
-	}
+		int minDeletion = str.length()-lps;
+		System.out.println("Minimun Deletion : "+minDeletion);}
 
 }

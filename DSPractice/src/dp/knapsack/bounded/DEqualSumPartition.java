@@ -19,7 +19,7 @@ public class DEqualSumPartition {
 
 		int arr[] = {4,2,5,7,8,6};
 		
-		checkEqualPartition(arr);
+		System.out.println(checkEqualPartition(arr));
 	}
 
 }
