@@ -53,7 +53,7 @@ public class Tree {
 		if(node == null) {
 			return 0;
 		}
-		return Math.max(1+height(node.left), 1+height(node.right)); 
+		return 1 + Math.max(height(node.left), height(node.right)); 
 	}
 	
 	public static void printLevel(Node node, int level) {
@@ -99,13 +99,15 @@ public class Tree {
 					System.out.println();
 				}
 			} else {
+				
+				System.out.print(curr.data + " ");
+				
 				if (curr.left != null)
 					queue.add(curr.left);
 
 				if (curr.right != null)
 					queue.add(curr.right);
 
-				System.out.print(curr.data + " ");
 			}
 		}
 	}
@@ -158,6 +160,45 @@ public class Tree {
 		return leftNode != null ? leftNode : rightNode;
 	}
 	
+	public static void boundryTraversal(Node node) {
+		if(node == null) {
+			return;
+		}
+		printLeftSide(node);
+		printLeafs(node);
+		printRightSide(node);
+	}
+	
+	public static void printLeftSide(Node node) {
+		if(node.left != null) {
+			System.out.println(node.data);
+			printLeftSide(node.left);
+		}
+	}
+	
+	public static void printRightSide(Node node) {
+		if(node.right != null) {
+			printLeftSide(node.right);
+			System.out.println(node.data);
+		}
+	}
+	
+	public static void printLeafs(Node node) {
+		if(node == null) {
+			return;
+		}
+		if(node.left == null && node.right == null) {
+			System.out.println(node.data);
+			return;
+		}
+		if(node.left != null) {
+			printLeafs(node.left);
+		}
+		if(node.right != null) {
+			printLeafs(node.right);
+		}
+	}
+	
 	
 	
 	public static void main(String args[]) {
@@ -196,6 +237,10 @@ public class Tree {
 		System.out.println("\n----------------------------");
 		System.out.println("LCA of (5,8) : ");
 		System.out.println(findLCA(node, 5, 8).data);
+		
+		System.out.println("\n----------------------------");
+		System.out.println("Boundry");
+		boundryTraversal(node);
 	}
 
 }

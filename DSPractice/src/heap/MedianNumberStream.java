@@ -25,7 +25,7 @@ public class MedianNumberStream {
 		}else {
 			if(minQueue.size() > maxQueue.size()) {
 				
-				if(num < minQueue.peek()) {
+				if(num < currMedian) {
 					maxQueue.add(minQueue.poll());
 					minQueue.add(num);
 				}else {
@@ -35,7 +35,7 @@ public class MedianNumberStream {
 				
 			}else if(maxQueue.size() > minQueue.size()) {
 				
-				if(num > maxQueue.peek()) {
+				if(num > currMedian) {
 					minQueue.add(maxQueue.poll());
 					maxQueue.add(num);
 				}else {
@@ -43,7 +43,7 @@ public class MedianNumberStream {
 				}
 				currMedian=(double)(minQueue.peek()+maxQueue.peek())/2;
 			}else {
-				if(num>maxQueue.peek()) {
+				if(num > currMedian) {
 					maxQueue.add(num);
 					currMedian = maxQueue.peek();
 				}else {
